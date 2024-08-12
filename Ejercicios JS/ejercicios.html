@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+</head>
+<body>
+    <h1>Ejercicios</h1>
+    <script>
+//bucle de numeros
+for (let i = 0; i < 100; i++) {
+    if(i % 3 === 0 && i % 5 === 0){
+        console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+            } else if (i % 5 === 0) {
+                console.log("Buzz");
+            } else {
+        console.log(i);
+    }
+}
+
+//palindromo
+function esPalindromo(cadena) {
+    let cadenalimpia = cadena.toLowerCase().replace(/[^a-z0-9]/g, '');
+    let cadenaInvertida = cadenalimpia.split('').reverse().join('');
+    return cadenalimpia === cadenaInvertida;
+    }
+
+console.log(esPalindromo("oso"));
+console.log(esPalindromo("Kendric,perro"));
+
+//Escribe una función que tome un array de números como argumento y devuelva la suma de todos los elementos.
+function sumaArray(arr) {
+    let suma = 0;
+    for (let i = 0; i < arr.length; i++) {
+        suma += arr[i];
+        }
+        return suma;
+        }
+        console.log(sumaArray([1, 2, 3, 4, 5]));
+//Crea una función que cuente el número de vocales en una cadena dada.
+function contarVocales(cadena) {
+    let vocales = "aeiouAEIOU";
+    let contador = 0;
+    for (let i = 0; i < cadena.length; i++) {
+        if (vocales.includes(cadena[i])) {
+            contador++;
+            }
+            }
+            return contador;
+        }
+        console.log(contarVocales("Mano","Perro","Gastos"));
+        console.log(contarVocales("Hola Tu estas Bien"));
+
+        //Crea una función que tome un array y devuelva un nuevo array sin elementos duplicados.
+        function sinDuplicados(array) {
+            let nuevoArray = [];
+            for (let i = 0; i < array.length; i++) {
+                if (!nuevoArray.includes(array[i])) {
+                    nuevoArray.push(array[i]);
+                    }
+                    }
+                    return nuevoArray;
+                    }
+                    console.log(sinDuplicados(["maaano"]));
+                    console.log(sinDuplicados([1,2,3,3,4,4,5,5]));
+
+        //Escribe una función que genere n números aleatorios únicos dentro de un rango dado
+        function generarNumerosAleatorios(n, min, max) {
+            let numerosAleatorios = new Set();
+            while (numerosAleatorios.size < n) {
+                numerosAleatorios.add(Math.floor(Math.random() * (max - min + 1))
+                + min);
+                }
+                return Array.from(numerosAleatorios);
+                }
+                console.log(generarNumerosAleatorios(2, 1,20));
+
+    </script>
+    
+</body>
+</html>
